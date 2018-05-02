@@ -13,7 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 import { HttpModule } from '@angular/http';
 import { ManagePlayersComponent } from './manage-players/manage-players.component';
-import { ManageStatusComponent } from './manage-status/manage-status.component'; // <-- Import HttpModule
+import { ManageStatusComponent } from './manage-status/manage-status.component';
+import { ReadGameStatusComponent } from './read-game-status/read-game-status.component';
+import { UpdateGameStatusComponent } from './update-game-status/update-game-status.component'; // <-- Import HttpModule
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ManageStatusComponent } from './manage-status/manage-status.component';
     ReadComponent,
     CreateComponent,
     ManagePlayersComponent,
-    ManageStatusComponent
+    ManageStatusComponent,
+    ReadGameStatusComponent,
+    UpdateGameStatusComponent
   ],
   imports: [
     BrowserModule,

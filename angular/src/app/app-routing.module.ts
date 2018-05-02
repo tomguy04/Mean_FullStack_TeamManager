@@ -5,6 +5,8 @@ import { CreateComponent } from './create/create.component';
 import { ReadComponent } from './read/read.component';
 import { ManagePlayersComponent } from './manage-players/manage-players.component';
 import { ManageStatusComponent } from './manage-status/manage-status.component';
+import { ReadGameStatusComponent } from './read-game-status/read-game-status.component';
+import { UpdateGameStatusComponent } from './update-game-status/update-game-status.component';
 
 const routes: Routes = [
   //define rules
@@ -21,7 +23,25 @@ const routes: Routes = [
         component: CreateComponent
       }
     ]
+  },
+
+  {
+    path:'status',
+    component: ManageStatusComponent,
+    children : [
+      {
+        path:'game',
+        component : ReadGameStatusComponent
+      },
+      {
+        path:'update',
+        component : UpdateGameStatusComponent
+      }
+    ]
   }
+
+
+
 ]
 
 

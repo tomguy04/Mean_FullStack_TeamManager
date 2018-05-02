@@ -19,10 +19,16 @@ export class Service {
   //     errorResponse => console.log(errorResponse)
   //   );
   // }
-  getBooks(): Observable<Player[]> {
+  getPlayers(): Observable<Player[]> {
     return this._http.get<Player[]>('api/players');
     // return of(BOOKS);
   }
+
+  deletePlayer(id: number): Observable<Player> {
+    console.log('in delete service');
+    return this._http.delete<Player>(`api/players/${id}`);
+  }
+  
 
   //   retrieveAll():Observable<Note[]>{
   //     console.log('*************trying to retrieve all');
