@@ -11,14 +11,18 @@ import { Service } from './object.service'
 import {HttpClientModule} from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
-import { HttpModule } from '@angular/http'; // <-- Import HttpModule
+import { HttpModule } from '@angular/http';
+import { ManagePlayersComponent } from './manage-players/manage-players.component';
+import { ManageStatusComponent } from './manage-status/manage-status.component'; // <-- Import HttpModule
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReadComponent,
-    CreateComponent
+    CreateComponent,
+    ManagePlayersComponent,
+    ManageStatusComponent
   ],
   imports: [
     BrowserModule,
