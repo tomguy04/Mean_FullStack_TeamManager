@@ -13,9 +13,17 @@ var path = require('path');
 app.use(express.static(__dirname + '/angular/dist'));
 //The db and routes
 require('./server/config/database')
+
 // require('./server/config/routes')(app);
-app.use('api',require('./server/config/routes'));
+
+app.use('/api',require('./server/config/routes'));
 app.use(require('./server/config/catch-all.route'))
+
+
+
+// require('./server/config/database');
+// app.use('/api', require('./server/config/routes'));
+// app.use(require('./server/config/routes/catch-all.route'));
 
 
 // CORS

@@ -1,6 +1,13 @@
 const playerController = require('../controllers/player');
 
-module.exports = function(app){
+//
+const router = require('express').Router();
+//
+
+//had this here
+//module.exports = function(app){
+    router
+
     // app 
     // .get('/tasks', taskController.index)
     // .post('/tasks', taskController.create)
@@ -15,15 +22,15 @@ module.exports = function(app){
         
     // });
 
-    app.get('/read', playerController.index);
-    app.get('/players/', playerController.index);
+    // app.get('/read', playerController.index);
+    // app.get('/players/', playerController.index);
     
-    app.get('/teams', playerController.index);
+    .get('/players', playerController.index)
 
-    app.post('/notes',playerController.create);
+    .post('/players',playerController.create)
 
     // app.all("*", (req,res,next) => {
     //   res.sendFile(path.resolve("./public/dist/index.html"))
     // });
     
-}
+    module.exports = router;

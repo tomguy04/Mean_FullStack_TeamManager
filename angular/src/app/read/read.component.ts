@@ -17,16 +17,17 @@ export class ReadComponent implements OnInit {
 
   ngOnInit() {
     console.log('in read')
-    this._Service.playerObserver.subscribe(
+    this._Service.getBooks().subscribe(
       players => {
         this.players = players,
-        console.log('the notes in read comp ', this.players)
+        console.log('the players in read comp ', this.players)
       }
     );
     //this._Service.retrieveAll();
   }
 
 }
+
 
 
 
