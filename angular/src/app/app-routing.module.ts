@@ -4,16 +4,35 @@ import { AppComponent } from './app.component'
 import { CreateComponent } from './create/create.component';
 import { ReadComponent } from './read/read.component';
 
-const routes: Routes = [{
+const routes: Routes = [
   //define rules
-  //http://localhost:9200
-  path:'',
-  pathMatch:'full',
-  component: CreateComponent
-}];
+  {
+    path:'create',
+    //children: [{
+     // path:'list',
+      pathMatch:'full',
+      component: CreateComponent
+    //}]
+  },
+  // {
+  //   path:'',
+  //   pathMatch:'full',
+  //   component: ReadComponent
+  // }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// {
+//   path: 'products',
+//   //pathMatch: 'full',
+//   // component: ReadComponent,
+//   children: [{
+//      path:'new', 
+//      pathMatch: 'full',
+//      component : CreateComponent
+//   },

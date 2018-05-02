@@ -14,7 +14,7 @@ export class Service {
   constructor(private _http: HttpClient) { }
 
   retrieveAll() {
-    this._http.get('/notes').subscribe(
+    this._http.get('/api/players').subscribe(
       notes => this.playerObserver.next(notes),
       errorResponse => console.log(errorResponse)
     );
@@ -26,9 +26,9 @@ export class Service {
   // }
  
 
-  create(note: Player) {
-    console.log('Service create ', note);
-    this._http.post('/notes', note).subscribe(
+  create(player: Player) {
+    console.log('Service create ', player);
+    this._http.post('/api/teams', player).subscribe(
       //response => this.retrieveAll(),
       response => console.log(response),
       errorResponse => console.log(errorResponse)

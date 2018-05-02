@@ -13,12 +13,14 @@ var path = require('path');
 app.use(express.static(__dirname + '/angular/dist'));
 //The db and routes
 require('./server/config/database')
-require('./server/config/routes')(app);
+// require('./server/config/routes')(app);
+app.use('api',require('./server/config/routes'));
+app.use(require('./server/config/catch-all.route'))
 
 
 // CORS
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 
 // Use native promises
 //mongoose.Promise = global.Promise;

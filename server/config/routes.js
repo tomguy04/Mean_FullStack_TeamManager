@@ -15,12 +15,15 @@ module.exports = function(app){
         
     // });
 
-    app.get('/notes', playerController.index);
+    app.get('/read', playerController.index);
+    app.get('/players/', playerController.index);
+    
+    app.get('/teams', playerController.index);
 
     app.post('/notes',playerController.create);
 
-    app.all("*", (req,res,next) => {
-      res.sendFile(path.resolve("./public/dist/index.html"))
-    });
+    // app.all("*", (req,res,next) => {
+    //   res.sendFile(path.resolve("./public/dist/index.html"))
+    // });
     
 }
