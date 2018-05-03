@@ -28,12 +28,25 @@ export class Service {
     console.log('in delete service');
     return this._http.delete<Player>(`api/players/${id}`);
   }
-  
 
-  //   retrieveAll():Observable<Note[]>{
-  //     console.log('*************trying to retrieve all');
-  //   return this._http.get<Note[]>('/notes');
+  editPlayer(id:string){
+    console.log('id edit from service ', id);
+    return this._http.post<Player>(`api/players/edit`, id);
+  }
+
+  //from here, we are returing a value to game-one.ts?
+  //mimic delete function in read ts
+
+  // getPlayerToEdit(id:number){
+  //   console.log('id edit from service ', id);
+  //   const product = this.myPRODUCTS.find(p => p.id == id)
+  //   console.log(product);
+  //   return of (product);
   // }
+
+
+
+
  
   create(player: Player) : Observable<Player>{
     console.log('Service create ', player);

@@ -15,7 +15,10 @@ import { HttpModule } from '@angular/http';
 import { ManagePlayersComponent } from './manage-players/manage-players.component';
 import { ManageStatusComponent } from './manage-status/manage-status.component';
 import { ReadGameStatusComponent } from './read-game-status/read-game-status.component';
-import { UpdateGameStatusComponent } from './update-game-status/update-game-status.component'; // <-- Import HttpModule
+import { UpdateGameStatusComponent } from './update-game-status/update-game-status.component';
+import { GameOneComponent } from './game-one/game-one.component';
+import { GameTwoComponent } from './game-two/game-two.component';
+import { GameThreeComponent } from './game-three/game-three.component'; // <-- Import HttpModule
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { UpdateGameStatusComponent } from './update-game-status/update-game-stat
     ManagePlayersComponent,
     ManageStatusComponent,
     ReadGameStatusComponent,
-    UpdateGameStatusComponent
+    UpdateGameStatusComponent,
+    GameOneComponent,
+    GameTwoComponent,
+    GameThreeComponent
   ],
   imports: [
     BrowserModule,

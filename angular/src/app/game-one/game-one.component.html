@@ -1,0 +1,22 @@
+<router-outlet></router-outlet>
+<p>
+  game-one Status list!
+</p>
+
+<table border = 1>
+    <thead>
+      <tr>
+        <td>Team Name</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+      <tr *ngFor='let player of players'>
+        <td>{{player.TeamName}} {{player._id}}</td>
+        <td>{{player.game1}}</td>
+        <button (click) = 'game1(player._id)'>Playing</button>
+        <button>Not Playing</button>
+        <button>Undecided</button>
+        <!-- <td *ngIf = 'data.importance'>High</td>
+        <td *ngIf = '!data.importance'>Low</td> -->
+     </tr>
+</table>
