@@ -24,15 +24,45 @@ export class Service {
     // return of(BOOKS);
   }
 
-  deletePlayer(id: number): Observable<Player> {
+  deletePlayer(id: string): Observable<Player> {
     console.log('in delete service');
     return this._http.delete<Player>(`api/players/${id}`);
   }
+  //executes this code
+  //.delete('/players/:playerID', playerController.destroy) //delete a player
+  //-----------------------------------------------------------------------
+  // destroy(request, response) {
+  //   Player.findByIdAndRemove(request.params.playerID)
+  //     .then(player => response.json(player))
+  //     .catch(console.log);
+  // }
 
-  editPlayer(id:string){
-    console.log('id edit from service ', id);
-    return this._http.post<Player>(`api/players/edit`, id);
+  getPlayer(playerId:string): Observable<Player> {
+    console.log('Service is getting player ', playerId)
+    return this._http.get<Player>(`api/players/${playerId}`);
   }
+
+   //editPlayerStatus(playerId:string, status:string, gameNumber:number): Observable<Player>{
+    //console.log('From Service playerId ', playerId, ' status ', status, ' gameNumber ', gameNumber);
+    editPlayerStatus(player:Player): Observable<Player>{
+      console.log ('service is updating with id ', player._id )
+      return this._http.put<Player>(`api/players/${player._id}`, player)
+  }
+
+  // var query = {'username':req.user.username};
+  // req.newData.username = req.user.username;
+  // MyModel.findOneAndUpdate(query, req.newData, {upsert:true}, function(err, doc){
+  //     if (err) return res.send(500, { error: err });
+  //     return res.send("succesfully saved");
+  // });
+
+  // //---------------------------------
+  //.get('/players/:playerID', playerController.show) //show/get A player
+
+  // editPlayerStatus(playerId:string, status:string, gameNumber:number): Observable<Player[]>{
+  //   console.log('From Service playerId ', playerId, ' status ', status, ' gameNumber ', gameNumber);
+  //   return this._http.post<Player[]>(`api/players/edit`, id);
+  // }
 
   //from here, we are returing a value to game-one.ts?
   //mimic delete function in read ts

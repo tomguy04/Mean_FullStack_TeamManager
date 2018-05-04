@@ -25,9 +25,15 @@ export class GameOneComponent implements OnInit {
     );
   }
 
-  game1(id:string){
-    console.log(id);
-    this._Service.editPlayer(id);
-  }
+
+  // onDelete(id: number) {
+  //   console.log('delete player', id);
+  //   this._Service.deletePlayer(id)
+  //   .subscribe(returnedPlayer => {
+  //     console.log('Returned Player to delete ', returnedPlayer)
+  //      this.players = this.players.filter(p => p.id !== returnedPlayer.id);
+  //      this.ngOnInit();
+  //   });
+  // }
 
 }

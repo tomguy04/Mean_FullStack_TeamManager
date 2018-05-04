@@ -30,13 +30,14 @@ export class ReadComponent implements OnInit {
     );
   }
 
-  onDelete(id: number) {
+  onDelete(id: string) {
     console.log('delete player', id);
     this._Service.deletePlayer(id)
     .subscribe(returnedPlayer => {
       console.log('Returned Player to delete ', returnedPlayer)
-       this.players = this.players.filter(p => p.id !== returnedPlayer.id);
-       this.ngOnInit();
+       this.players = this.players.filter(p => p._id !== returnedPlayer._id);
+       console.log(this.players);
+       //this.ngOnInit();
       //  this._router.navigateByUrl('/players/list', {skipLocationChange: true}).then(()=>
       //  this._router.navigate(["Your actualComponent"]));
        //this._router.navigateByUrl('/players/list');

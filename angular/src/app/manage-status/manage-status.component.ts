@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-manage-status',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-status.component.css']
 })
 export class ManageStatusComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  currentGame: string;
+  
+    constructor(private _route: ActivatedRoute) { }
+  
+    ngOnInit() {
+      this._route.paramMap
+        .subscribe(params => {
+          this.currentGame = params.get('id');
+          console.log('Current game is Game ', this.currentGame);
+        });
+    }
 
 }

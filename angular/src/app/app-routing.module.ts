@@ -28,30 +28,28 @@ const routes: Routes = [
     ]
   },
 
+  // {
+  //   path: 'status/game/:id',
+  //   component: StatusComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: GameStatusComponent,
+  //     },
+  //   ]
+  // }
+
   {
-    path:'status',
+    path:'status/game/:id',
     component: ManageStatusComponent, // this should have the Game 1 with 1 2 and 3 as links.
     children : [
         {
-          path:'game',
-          component : ReadGameStatusComponent, //just a place holder
-          children :[ 
-            {
-              path : '1',
-              component : GameOneComponent
-            },
-            {
-              path : '2',
-              component : GameTwoComponent
-            },
-            {
-              path : '3',
-              component : GameThreeComponent
-            }
-         ] 
+          path:'',
+          component : ReadGameStatusComponent
         }
       ]
   }
+
   // {
   //   path:'status',
   //   component: ManageStatusComponent,

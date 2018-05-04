@@ -7,10 +7,12 @@ module.exports={
         .catch(error => console.log(error));
     },
 
-    show(request, response) {},
-    edit(request, response) {},
-    new(request, response) {},
-    update(request, response) {},
+    update(request, response) {
+        Player.findByIdAndUpdate(request.params.playerID, request.body, { new: true })
+        //Player.findByIdAndUpdate(request.params.playerID, request.body, { new: true })
+          .then(book => response.json(book))
+          .catch(console.log);
+      },
 
     create(request, response) {
         
@@ -18,6 +20,22 @@ module.exports={
         .then(player => response.json(player))
         .catch(error => console.log(error));
     },
+
+    destroy(request, response) {
+        Player.findByIdAndRemove(request.params.playerID)
+          .then(player => response.json(player))
+          .catch(console.log);
+      },
+
+    show(request, response) {
+    Player.findById(request.params.playerID)
+        .then(    
+            player => response.json(player))
+        .catch(error =>
+        response
+            .status(500)
+            .json(errorMessage(error)));
+        }
 
     // create(request, response) {
     //     Player.create(request.body)
@@ -32,7 +50,6 @@ module.exports={
     //       });
     //   },
 
-    
-    destroy(request, response) {}
+
     
 }
